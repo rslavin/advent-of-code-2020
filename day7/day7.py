@@ -1,7 +1,5 @@
 import re
 
-parents = dict()
-
 
 def get_parents(color, holds):
     for p, c in parents.items():
@@ -19,6 +17,7 @@ def get_children(color):
     return total
 
 
+parents = dict()
 with open('day7.in') as f:
     for line in f.read().splitlines():
         parents[re.search(r"^(.*?) bags", line)[1]] = re.findall(r"(\d+) ([^ ]+ [^ ]+) bags?", line)
