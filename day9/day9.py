@@ -1,8 +1,5 @@
 from itertools import permutations
 
-with open('day9.in') as f:
-    numbers = list(map(int, f.read().splitlines()))
-
 
 def find_invalid():
     for i in range(25, len(numbers)):
@@ -16,6 +13,9 @@ def find_sequence(total):
             if sum(numbers[i:j]) == total:
                 return min(numbers[i:j]) + max(numbers[i:j])
 
+
+with open('day9.in') as f:
+    numbers = list(map(int, f.read().splitlines()))
 
 invalid = find_invalid()
 print(invalid)

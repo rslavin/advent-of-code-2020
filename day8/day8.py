@@ -1,9 +1,3 @@
-ops_init = []
-with open('day8.in') as f:
-    for line in f.read().splitlines():
-        ops_init.append(line.split(" ") + [False])
-
-
 def check(ops):
     step = 0
     acc = 0
@@ -32,5 +26,9 @@ def fix(ops):
             return acc
 
 
+ops_init = []
+with open('day8.in') as f:
+    for line in f.read().splitlines():
+        ops_init.append(line.split(" ") + [False])
 print(check(ops_init)[1])
 print(fix(ops_init))
